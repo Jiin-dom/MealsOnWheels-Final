@@ -26,7 +26,7 @@ const Rider = () => {
       };
       const response = await axios.get('/preparation/deliveries',  { headers });
       const deliveries = response.data;
-      const inProgress = deliveries.filter((delivery) => delivery.status === 'Approved');
+      const inProgress = deliveries.filter((delivery) => delivery.status === 'Assigned');
       const delivered = deliveries.filter((delivery) => delivery.status === 'Delivered');
       setInProgressDeliveries(inProgress);
       setDeliveredDeliveries(delivered);
